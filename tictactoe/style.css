@@ -32,7 +32,27 @@ h1{
     width: 120px;
     height: 140px;
     margin: 10px;
+    color: #fff;
     background-color: #5d67ff;
     font-size: 120px;
     align-items: center;
+    transition: all 300ms;
+}
+.box:hover{
+    transform: scale(1.08);
+}
+button {
+    background-color: transparent;
+    border: 2px solid #fff;
+    cursor: pointer;
+    color: #fff;
+    border-radius: 25px;
+    width: 120px;
+    padding: 12px;
+    margin-top: 20px;
+    transition: all 300ms;
+}
+button:hover{
+    background-color: #fff;
+    color: #000;
 }
