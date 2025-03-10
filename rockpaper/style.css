@@ -1,0 +1,27 @@
+body {
+    background-color: #4d4d4d;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.container {
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+button img{
+    border: 0;
+    width: 100px;
+    height: 100px;
+}
+button{
+    margin: 10px;
+    background-color: #ffc800;
+    border: 5px solid;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 250ms;
+}
+button:hover{
+    transform: scale(1.2);
+}

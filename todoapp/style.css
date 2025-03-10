@@ -1,0 +1,80 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0;
+    margin:0;
+    background-image: linear-gradient(to right, #012062, #450a5e);
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+.card {
+    background-color: #fff;
+    border-radius: 15px;
+    width: 500px;
+    height: 600px;
+    overflow: auto;
+}
+.cardheader{
+    position: relative;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.cardheader h2 {
+    flex: 1 1 100%;
+    margin: 0;
+    padding: 0 0 10px 0;
+}
+input[type=text]{
+    width: 75%;
+    border: 0;
+    background-color: #edeef0;
+    padding: 20px;
+    border-bottom-left-radius: 35px;
+    border-top-left-radius: 35px;
+    outline: none;
+}
+
+button{
+    text-transform: uppercase;
+    font-weight: bold;
+    position: absolute;
+    bottom: 20px;
+    right:20px;
+    width: 20%;
+    padding: 20px;
+    cursor: pointer;
+    border-radius: 35px;
+    border:0;
+    background-color: orangered;
+    color:#fff;
+    transition: all 200ms;
+}
+button:hover{
+    background-color: #dc3700;
+}
+.cardcontent{
+    padding: 20px;
+    display: flex;    
+    flex-direction: column;
+    width: 90%;
+}
+.content{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.fa {
+    margin-left: auto;
+    font-size: 20px !important;
+    text-align: right;
+    color: #787878;
+    transition: all 100ms;
+}
+.fa:hover{
+    color: #a00000;
+}

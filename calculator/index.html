@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="calculator">
+        <div class="display">0</div>
+        <div class="buttons">
+            <button class="button" style="color: orange" onclick="clearT()">C</button>
+            <button class="button" style="color: orange" onclick="deleteLast()"><</button>
+            <button class="button" style="color: orange" onclick="updateChar('%')">%</button>
+            <button class="button" style="color: orange" onclick="updateChar('/')">/</button>
+            <button class="button" onclick="updateChar('7')">7</button>
+            <button class="button" onclick="updateChar('8')">8</button>
+            <button class="button" onclick="updateChar('9')">9</button>
+            <button class="button" style="color: orange" onclick="updateChar('*')">x</button>
+            <button class="button" onclick="updateChar('4')">4</button>
+            <button class="button" onclick="updateChar('5')">5</button>
+            <button class="button" onclick="updateChar('6')">6</button>
+            <button class="button" style="color: orange" onclick="updateChar('-')">-</button>
+            <button class="button" onclick="updateChar('1')">1</button>
+            <button class="button" onclick="updateChar('2')">2</button>
+            <button class="button" onclick="updateChar('3')">3</button>
+            <button class="button" style="color: orange" onclick="updateChar('+')">+</button>
+            <button class="button"></button>
+            <button class="button" onclick="updateChar('0')">0</button>
+            <button class="button" onclick="updateChar('.')">.</button>
+            <button class="button" onclick="result()" style="color: orange">=</button>
+        </div>
+    </div>
+    <script>
+        let display = document.getElementsByClassName("display")[0]
+        function deleteLast(){
+            display.innerText = display.innerText.slice(0, display.innerText.length-1)
+            if (display.innerText == '') display.innerText = '0'
+        }
+        function updateChar(char){
+            if(display.innerText === '0' && char != '.'){
+                display.innerText = char
+            }else {
+                display.innerText += char
+            }
+        }
+        function clearT(){
+            display.innerText = '0'
+        }
+        const result = () => {
+            if(display.innerText.match(/[0-9]+[+/*-]/)){
+                display.innerText = eval(display.innerText)
+            } else {
+                display.innerText = '0'
+            }
+        }
+    </script>
+</body>
+
+</html>
