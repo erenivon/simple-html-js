@@ -72,20 +72,22 @@ body {
 
 .button:nth-child(1),
 .button:nth-child(2),
-.button:nth-child(3) {
+.button:nth-child(3),
+.button:nth-child(8),
+.button:nth-child(12) {
     background-color: #ff9500;
     box-shadow: 0 4px 0 #cc7800;
 }
 
 .button:nth-child(1):hover,
 .button:nth-child(2):hover,
-.button:nth-child(3):hover {
+.button:nth-child(3):hover,
+.button:nth-child(8):hover,
+.button:nth-child(12):hover {
     background-color: #ffaa33;
 }
 
-.button:nth-child(4),
-.button:nth-child(8),
-.button:nth-child(12) {
+.button:nth-child(4) {
     background-color: #ff5a5a;
     box-shadow: 0 4px 0 #cc4848;
 }
@@ -97,9 +99,7 @@ body {
     background-color: #868686;
 }
 
-.button:nth-child(4):hover,
-.button:nth-child(8):hover,
-.button:nth-child(12):hover {
+.button:nth-child(4):hover {
     background-color: #ff7070;
 }
 
