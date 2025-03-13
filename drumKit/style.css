@@ -10,18 +10,70 @@ body{
     text-align: center;
     margin: auto;
     padding: 20px;
-    width: 30%;
+    width: 90%;
+    max-width: 1200px;
     background-color: gray;
-    gap: 50px;
+    gap: 20px;
+    flex-direction: row; /* Ensure horizontal layout */
+    flex-wrap: nowrap; /* Prevent wrapping to keep keys side by side */
+    overflow-x: auto; /* Allow horizontal scrolling if needed */
 }
+
 img{
-    width: 500px;
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    margin-bottom: 20px;
 }
+
 p{
     padding: 10px 20px;
     border: 5px solid;
     font-size: 50px;
     color: #fff;
-    margin:0;
+    margin: 0;
     transition: all 250ms;
+    flex-shrink: 0; /* Prevent characters from shrinking */
+}
+
+/* Media Queries for Responsiveness */
+@media screen and (max-width: 992px) {
+    .char {
+        width: 95%;
+        gap: 15px;
+    }
+    
+    p {
+        font-size: 40px;
+        padding: 8px 16px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .char {
+        width: 98%;
+        gap: 10px;
+    }
+    
+    p {
+        font-size: 30px;
+        padding: 6px 12px;
+        border-width: 4px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .char {
+        padding: 15px 5px;
+    }
+    
+    img {
+        max-width: 90%;
+    }
+    
+    p {
+        font-size: 24px;
+        padding: 5px 10px;
+        border-width: 3px;
+    }
 }
