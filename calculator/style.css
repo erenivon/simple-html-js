@@ -85,16 +85,21 @@ body {
 
 .button:nth-child(4),
 .button:nth-child(8),
-.button:nth-child(12),
-.button:nth-child(16) {
+.button:nth-child(12) {
     background-color: #ff5a5a;
     box-shadow: 0 4px 0 #cc4848;
+}
+.button:nth-child(16) {
+    background-color: #797878;
+    box-shadow: 0 4px 0 #525252;
+}
+.button:nth-child(16):hover {
+    background-color: #868686;
 }
 
 .button:nth-child(4):hover,
 .button:nth-child(8):hover,
-.button:nth-child(12):hover,
-.button:nth-child(16):hover {
+.button:nth-child(12):hover {
     background-color: #ff7070;
 }
 
