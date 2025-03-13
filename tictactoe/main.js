@@ -1,45 +1,59 @@
-let player = Math.floor(Math.random() * 2)
-let start = document.getElementById('start')
-let btn = document.querySelectorAll('.box')
-let txt = document.getElementById('winner')
-let strikeX = []
-let strikeO = []
-if (player == 1) {
-    document.querySelector(".screen1 h1").innerText += " X"
-} else {
-    document.querySelector(".screen1 h1").innerText += " O"
-}
-start.addEventListener('click', () => {
-    document.querySelector('.screen1').style.display = "none"
-    document.querySelector('.screen2').style.display = "flex"
-})
-for (let i = 0; i < btn.length; i++) {
-    btn[i].addEventListener('click', () => {
-        if (btn[i].innerText == "" && txt.innerText == "") {
-            control(i)
-            if (player == 1) {
-                btn[i].innerText = "X"
-                player = 0
-            } else {
-                btn[i].innerText = "O"
-                player = 1
-            }
-        }
-    })
-}
-function control(index) {
-    let contr = [
-        [0, 1, 2],
-        [3, 4, 5],
-        [6, 7, 8], [0, 3, 6], [0, 4, 8], [1, 4, 7], [2, 4, 6], [2, 5, 8]
-    ]
+let player = Math.floor(Math.random() * 2);
+let start = document.getElementById("start");
+let btns = document.querySelectorAll(".box");
+let txt = document.getElementById("winner");
+let strikeX = [];
+let strikeO = [];
+let isFinish = false;
+
+function changeScreen() {
+  document.querySelector(".screen1").style.display = "none";
+  document.querySelector(".screen2").style.display = "flex";
+};
+
+function playerControl() {
+    if (this.innerText != "" || isFinish == true) return
     if (player == 1) {
-        strikeX.push(index)
+        player = 0;
+        this.innerText = "X";
+        strikeX.push(Array.from(btns).indexOf(this));
+        console.log(this)
     } else {
-        strikeO.push(index)
+        player = 1;
+        this.innerText = "O";
+        strikeO.push(Array.from(btns).indexOf(this));
     }
-    for (let i = 0; i < contr.length; i++) {
-        if (contr[i].every(v => strikeX.includes(v))) txt.innerText = "X WON"
-        if (contr[i].every(v => strikeO.includes(v))) txt.innerText = "O WON"
-    }
+    control();
 }
+
+function control() {
+  let ways = [
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [0, 4, 8],
+    [1, 4, 7],
+    [2, 4, 6],
+    [2, 5, 8],
+  ];
+  ways.forEach((way) => {
+    if (way.every((v) => strikeX.includes(v))){
+        isFinish = true;
+        return txt.innerText = "X WON";
+    }
+    if (way.every((v) => strikeO.includes(v))){
+        isFinish = true;
+        return txt.innerText = "O WON";
+    }
+  })
+}
+
+(function start() {
+  player == 1
+    ? (document.querySelector(".screen1 h1").innerText += " X")
+    : (document.querySelector(".screen1 h1").innerText += " O");
+})();
+
+start.addEventListener("click", changeScreen)
+btns.forEach((btn) => { btn.addEventListener("click", playerControl); });

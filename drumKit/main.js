@@ -7,9 +7,9 @@ function playMusic(i){
   setTimeout(() => {
     char[Number(i-1)].style.transform = "scale(1)";
     char[Number(i-1)].style.color = "#fff";
-  }, 300);
+  }, 120);
 }
-document.addEventListener("keydown", (e) => {
+function keydownEvent(e) {
   if (e.code == "KeyA") {
     new Audio("audio/1.wav").play();
     char[0].style.transform = "scale(0.8)";
@@ -35,9 +35,8 @@ document.addEventListener("keydown", (e) => {
     char[4].style.transform = "scale(0.8)";
     char[4].style.color = "#ffc800";
   }
-});
-
-document.addEventListener("keyup", (e) => {
+}
+function keyupEvent(e) {
   if (e.code == "KeyA") {
     char[0].style.transform = "scale(1)";
     char[0].style.color = "#fff";
@@ -58,4 +57,6 @@ document.addEventListener("keyup", (e) => {
     char[4].style.transform = "scale(1)";
     char[4].style.color = "#fff";
   }
-});
+}
+document.addEventListener("keydown", keydownEvent);
+document.addEventListener("keyup", keyupEvent);

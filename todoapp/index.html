@@ -33,6 +33,7 @@
                 card.innerHTML +=
                     '<div class="content" id="todolist' + i + '"><input type="radio" name="todo" id="todo' + i + '"><label for="todo' + i + '" id="todo' + i + '" class="labeltodo">' + textbox.value + '</label><i class="fa fa-trash" onclick="todoRemove(' + i + ')"></i></div>'
                 i = i + 1;
+                textbox.value = ""
             }
         }
         function todoRemove(i) {

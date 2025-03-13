@@ -55,26 +55,28 @@ function calculatePercentage() {
     display.innerText = "Error";
   }
 }
-document.addEventListener("keydown", (event) => {
-  const key = event.key;
 
-  if (/[0-9]/.test(key)) {
-    appendToDisplay(key);
-  } else if (key === ".") {
-    appendToDisplay(".");
-  } else if (key === "+" || key === "-") {
-    appendToDisplay(key);
-  } else if (key === "*") {
-    appendToDisplay("×");
-  } else if (key === "/") {
-    appendToDisplay("/");
-  } else if (key === "Enter" || key === "=") {
-    calculate();
-  } else if (key === "Backspace") {
-    deleteLastChar();
-  } else if (key === "Escape" || key === "c" || key === "C") {
-    clearDisplay();
-  } else if (key === "%") {
-    calculatePercentage();
-  }
-});
+function keyEvent(e){
+    const key = event.key;
+
+    if (/[0-9]/.test(key)) {
+      appendToDisplay(key);
+    } else if (key === ".") {
+      appendToDisplay(".");
+    } else if (key === "+" || key === "-") {
+      appendToDisplay(key);
+    } else if (key === "*") {
+      appendToDisplay("×");
+    } else if (key === "/") {
+      appendToDisplay("/");
+    } else if (key === "Enter" || key === "=") {
+      calculate();
+    } else if (key === "Backspace") {
+      deleteLastChar();
+    } else if (key === "Escape" || key === "c" || key === "C") {
+      clearDisplay();
+    } else if (key === "%") {
+      calculatePercentage();
+    }
+}
+document.addEventListener("keydown", keyEvent);
