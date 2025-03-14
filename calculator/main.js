@@ -1,15 +1,11 @@
 const display = document.getElementById("display");
 
 function appendToDisplay(value) {
-  if (display.innerText === "0" && value !== ".") {
-    display.innerText = value;
-  } else if (display.innerText.length < 12) {
-    display.innerText += value;
-  }
-  display.classList.add("input-animation");
-  setTimeout(() => {
-    display.classList.remove("input-animation");
-  }, 100);
+    (display.innerText === "0" && value !== ".") ? display.innerText = value : display.innerText += value;
+    display.classList.add("input-animation");
+    setTimeout(() => {
+        display.classList.remove("input-animation");
+    }, 100);
 }
 
 function clearDisplay() {
@@ -21,11 +17,7 @@ function clearDisplay() {
 }
 
 function deleteLastChar() {
-  if (display.innerText.length === 1) {
-    display.innerText = "0";
-  } else {
-    display.innerText = display.innerText.slice(0, -1);
-  }
+  (display.innerText.length === 1) ? display.innerText = "0" : display.innerText = display.innerText.slice(0, -1);
 }
 
 function calculate() {
@@ -57,26 +49,21 @@ function calculatePercentage() {
 }
 
 function keyEvent(e){
-    const key = event.key;
-
-    if (/[0-9]/.test(key)) {
-      appendToDisplay(key);
-    } else if (key === ".") {
-      appendToDisplay(".");
-    } else if (key === "+" || key === "-") {
-      appendToDisplay(key);
-    } else if (key === "*") {
-      appendToDisplay("×");
-    } else if (key === "/") {
-      appendToDisplay("/");
-    } else if (key === "Enter" || key === "=") {
-      calculate();
-    } else if (key === "Backspace") {
-      deleteLastChar();
-    } else if (key === "Escape" || key === "c" || key === "C") {
-      clearDisplay();
-    } else if (key === "%") {
-      calculatePercentage();
+    let functionNames = {
+        "appendToDisplay": [".", "+", "-", "*", "/", "0","1","2","3","4","5","6","7","8","9"],
+        "calculate": ["Enter", "="],
+        "deleteLastChar": ["Backspace"],
+        "clearDisplay": ["Escape", "C", "c"],
+        "calculatePercentage": ["%"]
     }
+    Object.entries(functionNames).forEach(entry => {
+        if(entry[1].includes(e.key)){
+            if(entry[0] == "appendToDisplay") appendToDisplay(e.key);
+            if(entry[0] == "calculate") calculate(e.key);
+            if(entry[0] == "deleteLastChar") deleteLastChar(e.key);
+            if(entry[0] == "clearDisplay") clearDisplay(e.key);
+            if(entry[0] == "calculatePercentage") calculatePercentage(e.key);
+        }
+    })
 }
 document.addEventListener("keydown", keyEvent);

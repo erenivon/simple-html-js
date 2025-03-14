@@ -5,13 +5,13 @@ let winnerText = document.getElementById("winner");
 let playAgainBtn = document.querySelector(".again");
 
 function playGame() {
-  console.log(Array.from(playerBtns).indexOf(this));
+    let arrayFrom = Array.from(playerBtns).indexOf(this)
   let cmp = Math.floor(Math.random() * playerBtns.length);
-  winnerText.innerText = decide(Array.from(playerBtns).indexOf(this), cmp);
+  winnerText.innerText = decide(arrayFrom, cmp);
   winnerText.style.visibility = "visible";
   this.style.transform = "scale(1.2)";
   playerBtns.forEach((btn, index) => {
-    if (index !== Array.from(playerBtns).indexOf(this)) {
+    if (index !== arrayFrom) {
       btn.style.transform = "scale(0.8)";
       btn.style.pointerEvents = "none";
     }
