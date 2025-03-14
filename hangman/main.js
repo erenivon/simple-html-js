@@ -1,14 +1,59 @@
 let words = [
-    "COFEFE", "PROGRAMMING", "JAVASCRIPT", "PYTHON", "HTML", "CSS", "REACT", 
-    "ANGULAR", "NODEJS", "DATABASE", "ALGORITHM", "DEBUGGING", "CLOUD", 
-    "MACHINELEARNING", "ARTIFICIALINTELLIGENCE", "COMPUTER", "SOFTWARE", 
-    "HARDWARE", "SECURITY", "DEVELOPER", "APPLICATION", "INTERNET", 
-    "TECHNOLOGY", "DATABASES", "NETWORKING", "CYPHER", "ENCRYPTION", 
-    "HACKER", "VIRUS", "MALWARE", "BACKEND", "FRONTEND", "FRAMEWORK", 
-    "VERSION", "DEPLOYMENT", "RESPONSIVE", "USERINTERFACE", "UXDESIGN", 
-    "CODING", "PROGRAMMER", "SYNCHRONIZATION", "ENCODE", "DECODER", 
-    "DEBBUG", "HOSTING", "VIRTUALIZATION", "AUTOMATION", "API", "LIBRARY", 
-    "REPOSITORY", "PARSER", "RENDERING", "CACHING", "LOGGING", "BROWSER"
+  "COFEFE",
+  "PROGRAMMING",
+  "JAVASCRIPT",
+  "PYTHON",
+  "HTML",
+  "CSS",
+  "REACT",
+  "ANGULAR",
+  "NODEJS",
+  "DATABASE",
+  "ALGORITHM",
+  "DEBUGGING",
+  "CLOUD",
+  "MACHINELEARNING",
+  "ARTIFICIALINTELLIGENCE",
+  "COMPUTER",
+  "SOFTWARE",
+  "HARDWARE",
+  "SECURITY",
+  "DEVELOPER",
+  "APPLICATION",
+  "INTERNET",
+  "TECHNOLOGY",
+  "DATABASES",
+  "NETWORKING",
+  "CYPHER",
+  "ENCRYPTION",
+  "HACKER",
+  "VIRUS",
+  "MALWARE",
+  "BACKEND",
+  "FRONTEND",
+  "FRAMEWORK",
+  "VERSION",
+  "DEPLOYMENT",
+  "RESPONSIVE",
+  "USERINTERFACE",
+  "UXDESIGN",
+  "CODING",
+  "PROGRAMMER",
+  "SYNCHRONIZATION",
+  "ENCODE",
+  "DECODER",
+  "DEBBUG",
+  "HOSTING",
+  "VIRTUALIZATION",
+  "AUTOMATION",
+  "API",
+  "LIBRARY",
+  "REPOSITORY",
+  "PARSER",
+  "RENDERING",
+  "CACHING",
+  "LOGGING",
+  "BROWSER",
 ];
 
 let wrongWords = [];
@@ -20,17 +65,16 @@ let selectedWord;
 let winOrLoseText = document.getElementById("winOrLose");
 
 function keyPress(char) {
-    let guessInput = document.getElementById("guessInput");
-    
-    guessInput.value = char;
-    guess(); 
-    guessInput.value = ''; 
-}
+  let guessInput = document.getElementById("guessInput");
 
+  guessInput.value = char;
+  guess();
+  guessInput.value = "";
+}
 
 function guess() {
   let char = document.getElementById("guessInput").value.toUpperCase();
-
+  document.getElementById("guessInput").value = ""
   if (selectedWord.includes(char)) {
     let result = document.getElementById("wordDisplay").innerText.split(" ");
     for (let i = 0; i < selectedWord.length; i++) {
@@ -49,8 +93,9 @@ function guess() {
     if (health <= 0) {
       healtText.innerText = "0";
       showLoseMessage("YOU LOSE!");
-      document.getElementById("hangmanPic").src =
-      "img/hangman8.png";
+      document.getElementById("hangmanPic").src = "img/hangman8.png";
+      wrongWords.push(char);
+      document.getElementById("wrongGuesses").innerText += " " + char;
       return;
     }
     wrongWords.push(char);
