@@ -5,7 +5,13 @@
 ![image](https://github.com/user-attachments/assets/2761024f-18b1-4832-909c-c4b7b567000e)
 
 ## CALCULATOR
-![image](https://github.com/user-attachments/assets/ecdf77c1-c5da-4c25-a90b-cb4f7dfea20d)
+![image](https://github.com/user-attachments/assets/b03bb7f3-f89c-4c9c-b9c7-9995789a9ebf)
+
+## HANGMAN
+![image](https://github.com/user-attachments/assets/9cd4d2b4-ba2c-4f4d-832d-3d9fa376828d)
+
+## PAIR GAME
+![image](https://github.com/user-attachments/assets/e69e934d-a73e-420e-a812-0b35ff5ea0bf)
 
 ## COUNTER
 ![image](https://github.com/user-attachments/assets/c4d73c6a-b612-4348-b202-14d781aa6eef)
