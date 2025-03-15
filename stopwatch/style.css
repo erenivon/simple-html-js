@@ -1,0 +1,67 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #121212;
+    color: #e0e0e0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.stopwatchContainer {
+    background-color: #1e1e1e;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.8);
+    text-align: center;
+    width: 300px;
+    position: relative;
+    gap: 50px;
+}
+
+#timeDisplay {
+    font-size: 72px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #e0e0e0;
+    text-shadow: 4px 2px 0 rgba(255, 255, 255, 0.5);
+}
+
+button {
+    padding: 18px 36px;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.5rem;
+    transition: all 0.2s;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.a{
+    background-color: #3a9e3f;
+    box-shadow: 0 4px 0 #275e27;
+}
+.a:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 6px 0 #275e27;
+}
+.a:active{
+    transform: translateY(2px);
+    box-shadow: 0 1px 0 #275e27;
+}
+.b{
+    background-color: #c43b3b;
+    box-shadow: 0 4px 0 #681919;
+}
+.b:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 6px 0 #681919;
+}
+.b:active{
+    transform: translateY(2px);
+    box-shadow: 0 1px 0 #681919;
+}
