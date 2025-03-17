@@ -6,11 +6,12 @@ let dayText = document.getElementById("day");
 checkbox.addEventListener("click", () => {
   if (checkbox.checked) {
     daynight.classList.add("checked");
-    document.body.style.backgroundColor = "#022152"
     dayText.innerText = "NIGHT"
+    document.body.classList.add('dark')
   } else {
     daynight.classList.remove("checked");
     dayText.innerText = "DAY"
-    document.body.style.backgroundColor = "#5d77a3"
+    document.body.classList.remove('dark')
+    
   }
 });
